@@ -5,6 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "1"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
@@ -32,8 +34,3 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
-  metadata:
-   name: demo-app
-   namespace: argocd
-   finalizers:
-    - resources-finalizer.argocd.argoproj.io
