@@ -18,3 +18,8 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  metadata:
+  name: demo-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
